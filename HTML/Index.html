@@ -1,0 +1,263 @@
+<!DOCTYPE>
+<html lang="es">
+    <head>
+        <title>Inicio - App de Registro Móvil</title>
+
+        <!--Tags-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+
+        <!--Styles de la App-->
+        <link rel="stylesheet" href="bower_components/bootstrap-3.3.7-dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="resources/css/palette.css" />
+
+        <!--Styles Customs-->
+        <link rel="stylesheet" href="resources/css/style.css" />
+
+        <!--Favicon-->
+        <link rel="shortcut icon" type="image/x-icon" href="storage/img/Favicon.ico" />
+
+    </head>
+    <body class="background-color">
+        <header class="app-headercontent">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container custom-navbar">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img ID="Logo" alt="Brand" src="storage/img/Logotipo Largo.png" />
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                        <div class="navbar-form navbar-right">
+                            <a class="btn btn-default app-btn-menu">
+                                Iniciar Sesión
+                            </a>
+                            <a class="btn btn-default app-btn-menu">
+                                Registrarse
+                            </a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            <li><a href="#" class="primary-text-color">Terminos y Condiciones</a></li>
+
+                            <li><a href="#" class="primary-text-color">Contactenos</a></li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle primary-text-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Michael Traña <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+                </nav>
+        </header>
+
+
+        <div class="app-primary-content">
+            <div class="app-slogan">
+                <div ID="text-slogan" class="text-center">
+                    <h1 class="slogan-title">
+                        Ubicar un mensaje de la página
+                    </h1>
+                    <h4 class="slogan-sub-title">
+                        Aca hay que poner un sub-titulo o descripción del mensaje de la página.
+                    </h4>
+                    <a href="" class="slogan-btn btn btn-danger btn-lg">
+                        CREAR UNA CUENTA
+                    </a>
+                    <div class="slogan-social-links">
+                        <img src="storage/img/social/facebook-icon.png" alt="">
+                        <img src="storage/img/social/twitter-icon.png" alt="">
+                    </div>
+                </div>
+                <img ID="img-slogan" class="img-responsive" src="storage/img/background/vision-header.jpg" />
+            </div>
+            
+            <div ID="app-register">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="text-center">
+                                Crea tu cuenta y registra tus dispositivos
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="container app-register-form">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img style="margin-top:100px;" class="img-responsive" src="storage/img/mobile/mobile.png" alt="">
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+
+                            <div class="form-register jumbotron">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="userName">Nombre</label>
+                                    </div>
+                                </div>
+                                <div class="row app-m-t">
+                                    <div class="col-sm-6">
+                                        <input id="userName" type="text" class="form-control" placeholder="Nombres" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="Apellidos" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userEmail">Correo</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="width: 100%;" id="userEmail" type="email" class="form-control" placeholder="Correo electrónico" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userDNI">Cédula</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="width: 100%;" id="userDNI" type="text" class="form-control" placeholder="Cédula" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userPhone1">Teléfono</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input id="userPhone1" type="text" class="form-control" placeholder="Teléfono 1" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input id="userPhone2" type="text" class="form-control" placeholder="Teléfono 2" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userMunicipality">Ciudad</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input id="userMunicipality" type="email" class="form-control" placeholder="Ciudad (Municipio)" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userAddress">Dirección</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <textarea id="userAddress" class="form-control" placeholder="Dirección personal" rows="4"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userPassword">Contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input id="userPassword" type="text" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <label for="userPasswordConfirm">Confirmar tu contraseña</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input id="userPasswordConfirm" type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="row app-m-t">
+                                    <div class="col-sm-12">
+                                        <input class="btn btn-danger" type="button" value="Crear una cuenta" />
+                                        <a class="btn btn-default">
+                                            Iniciar Sesión
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="app-mobile">
+                
+            </section>
+
+        </div>
+
+        <footer ID="app-footer-content">
+            <section class="app-footer-link">
+
+            </section>
+            <section class="app-footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9 copyright">
+                            &copy; Copyright 2017 - <a href="#">Movil.com</a>. All rights reserved.
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="">
+                                <img src="storage/img/profile/Perfil1.png" width="32" />
+                            </a>
+                            <a href="">
+                                <img src="storage/img/profile/Perfil2.png" width="32" />
+                            </a>
+                            <a href="">
+                                <img src="storage/img/profile/Perfil3.png" width="32" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+        <!--Scripts de la App-->
+        <script type="text/javascript" src="bower_components/jquery-3.2.0/js/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+        <!--Scripts Customs-->
+        <script type="text/javascript" src="resources/js/script.js"></script>
+
+    </body>
+</html>

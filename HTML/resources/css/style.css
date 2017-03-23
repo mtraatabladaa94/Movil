@@ -1,0 +1,104 @@
+body {
+    padding-top:72px;
+}
+
+textarea {
+    resize: none;
+}
+
+#Logo {
+    margin-top:-3.5px;
+    width: 93px;
+}
+.app-btn-menu {
+    margin-top: 11px;
+}
+
+#app-slogan {
+    /*min-height: 600px;*/
+}
+.slogan-title {
+    font-size: 48px;
+}
+.slogan-sub-title {
+    font-size: 28px;
+}
+.slogan-title, .slogan-sub-title, .slogan-btn, .slogan-social-links {
+    margin-top:20px;
+}
+.slogan-title, .slogan-sub-title {
+    text-shadow: 1px 0px 30px rgba(255, 255, 255, 0.99);
+}
+.slogan-btn {
+    border-radius: 3px;
+    /*background:transparent;*/
+    color: #fff;
+}
+#text-slogan {
+    position: absolute;
+    width:100%;
+    top: 300px;
+}
+#img-slogan {
+    z-index: -1;
+}
+
+#app-register {
+    background: #FFF;
+    padding-top:20px;
+}
+.app-register-form {
+    margin-top:30px;
+}
+.form-register.jumbotron {
+    border-radius:3px;
+    padding:30px;
+}
+.form-control {
+    border-radius: 0px;
+}
+.form-control:focus {
+    border-color: #e96666;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(233, 102, 102, 0.6);
+}
+.app-m-t {
+    margin-top: 7px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar-default {
+    background-color: #FFF;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+#app-footer-content {
+    background:#57657d;
+}
+.app-footer-link {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.app-footer-copyright {
+    line-height: 32px;
+    background:#2e3c54;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.app-footer-copyright .copyright {
+    color:#FFf;
+    font-size: 12px;
+}
+
+.app-footer-copyright .copyright a{
+    color: #FFF;
+    font-size: 12px;
+
+}

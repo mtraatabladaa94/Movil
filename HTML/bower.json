@@ -1,0 +1,19 @@
+{
+  "name": "aplicacion",
+  "authors": [
+    "Michael Traña <mtraatabladaa94@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/bower_components",
+    "test",
+    "tests"
+  ]
+}
