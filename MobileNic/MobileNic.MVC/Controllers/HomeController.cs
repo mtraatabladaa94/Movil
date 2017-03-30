@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MobileNic.MVC.Models;
 
 namespace MobileNic.MVC.Controllers
 {
@@ -10,6 +11,11 @@ namespace MobileNic.MVC.Controllers
     {
         public ActionResult Index()
         {
+            using (var db = new MobileModels())
+            {
+                db.Database.CreateIfNotExists();
+            }
+
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View();
