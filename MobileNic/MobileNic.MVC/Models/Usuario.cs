@@ -65,7 +65,7 @@ namespace MobileNic.MVC.Models
 
         [Required]
         [Display(Name = "Municipio")]
-        public int IdMunicipio { get; set; }
+        public short IdMunicipio { get; set; }
     }
 
     public partial class Usuario

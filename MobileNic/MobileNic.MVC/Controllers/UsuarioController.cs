@@ -17,12 +17,21 @@ namespace MobileNic.MVC.Controllers
 
         public ActionResult Index(string name = "")
         {
-            //Inicializar el objeto db
-            db = new MobileModels();
+            try
+            {
+                //Inicializar el objeto db
+                db = new MobileModels();
 
-            var users = db.Usuarios.Where(c => (c.NombresUsuario + " " + c.ApellidosUsuario).Contains(name)).AsParallel().ToList();
+                var users = db.Usuarios.AsParallel().Where(c => (c.NombresUsuario + " " + c.ApellidosUsuario).Contains(name)).ToList();
 
-            return View(users);
+                return View(users);
+            }
+            catch (Exception ex)
+            {
+                ViewBag["Err"] = ex.Message;
+
+                return View();
+            }
         }
 
         //
@@ -30,21 +39,30 @@ namespace MobileNic.MVC.Controllers
 
         public ActionResult Details(Guid id)
         {
-            //Inicializar el objeto db
-            db = new MobileModels();
-
-            var user = db.Usuarios.Where(c => c.IdUsuario == id).AsParallel().FirstOrDefault();
-
-            if (user == null)
+            try
             {
-                //Message
-                var msg = "";
+                //Inicializar el objeto db
+                db = new MobileModels();
 
-                //Not Found - Err 404
-                RedirectToAction("Err404", "Err", new { Message = msg });
+                var user = db.Usuarios.AsParallel().Where(c => c.IdUsuario == id).FirstOrDefault();
+
+                if (user == null)
+                {
+                    //Message
+                    var msg = "";
+
+                    //Not Found - Err 404
+                    RedirectToAction("Err404", "Err", new { Message = msg });
+                }
+
+                return View(user);
             }
+            catch (Exception ex)
+            {
+                ViewBag["Err"] = ex.Message;
 
-            return View(user);
+                return View();
+            }
         }
 
         //
@@ -87,21 +105,70 @@ namespace MobileNic.MVC.Controllers
         //
         // GET: /Usuario/Edit/5
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            try
+            {
+                //TODO: Add insert logic here
+
+                //Inicializar el objeto db
+                db = new MobileModels();
+
+                //Verificar si existe el usuario
+                var user = db.Usuarios.AsParallel().Where(c => c.IdUsuario == id).FirstOrDefault();
+
+                //Se evalua si existe
+                if (user == null)
+                {
+                    //Message
+                    var msg = "";
+
+                    //Not Found - Err 404
+                    RedirectToAction("Err404", "Err", new { Message = msg });
+                }
+
+                //Se hace la redirección
+                return View(user);
+
+            }
+            catch (Exception ex)
+            {
+                ViewBag["err"] = ex.Message;
+                return View();
+            }
         }
 
         //
         // POST: /Usuario/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Guid id, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
 
+                //Inicializar el objeto db
+                db = new MobileModels();
+
+                //Verificar si existe el usuario
+                var user = db.Usuarios.AsParallel().Where(c => c.IdUsuario == id).FirstOrDefault();
+
+                //Se evalua si existe
+                if (user == null)
+                {
+                    //Message
+                    var msg = "";
+
+                    //Not Found - Err 404
+                    RedirectToAction("Err404", "Err", new { Message = msg });
+                }
+
+                //Se guardan los cambios
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                //Se hace la redirección
                 return RedirectToAction("Index");
             }
             catch
@@ -113,8 +180,27 @@ namespace MobileNic.MVC.Controllers
         //
         // GET: /Usuario/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
+            try
+            {
+                // TODO: Add update logic here
+
+                //Inicializar el objeto db
+                db = new MobileModels();
+
+
+                //Verificar si existe el usuario
+                var user = db.Usuarios.AsParallel().Where(c => c.IdUsuario == id).FirstOrDefault();
+
+
+            }
+            catch (Exception ex)
+            {
+                ViewBag["err"] = ex.Message;
+                return View();
+            }
+
             return View();
         }
 
