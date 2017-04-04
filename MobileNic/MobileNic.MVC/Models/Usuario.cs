@@ -8,7 +8,7 @@ using System.Web;
 namespace MobileNic.MVC.Models
 {
     [Table("tbUsuario")]
-    public class Usuario
+    public partial class Usuario
     {
         [Key]
         public Guid IdUsuario { get; set; }
@@ -66,5 +66,19 @@ namespace MobileNic.MVC.Models
         [Required]
         [Display(Name = "Municipio")]
         public int IdMunicipio { get; set; }
+    }
+
+    public partial class Usuario
+    {
+
+        public Usuario()
+        {
+            this.Dispositivos = new HashSet<Dispositivo>();
+        }
+
+        public Municipio Municipio { get; set; }
+
+        public virtual ICollection<Dispositivo> Dispositivos { get; set; }
+
     }
 }

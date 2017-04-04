@@ -7,8 +7,9 @@ using System.Web;
 
 namespace MobileNic.MVC.Models
 {
+
     [Table("tbDispositivo")]
-    public class Dispositivo
+    public partial class Dispositivo
     {
         [Key]
         [Column(TypeName = "uniqueidentifier")]
@@ -65,5 +66,10 @@ namespace MobileNic.MVC.Models
         [Required]
         public Guid IdUsuario { get; set; }
 
+    }
+
+    public partial class Dispositivo
+    {
+        public Usuario Usuario { get; set; }
     }
 }

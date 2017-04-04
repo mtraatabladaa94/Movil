@@ -8,7 +8,7 @@ using System.Web;
 namespace MobileNic.MVC.Models
 {
     [Table("tbDepartamento")]
-    public class Departamento
+    public partial class Departamento
     {
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -19,5 +19,16 @@ namespace MobileNic.MVC.Models
         [Display(Name = "Departamento")]
         [Column(TypeName = "varchar")]
         public string NombreDepartamento { get; set; }
+
+    }
+
+    public partial class Departamento
+    {
+        public Departamento()
+        {
+            this.Municipios = new HashSet<Municipio>();
+        }
+
+        public virtual ICollection<Municipio> Municipios { get; set; }
     }
 }
