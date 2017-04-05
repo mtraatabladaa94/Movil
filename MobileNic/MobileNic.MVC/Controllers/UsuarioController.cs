@@ -52,7 +52,7 @@ namespace MobileNic.MVC.Controllers
                     var msg = "";
 
                     //Not Found - Err 404
-                    RedirectToAction("Err404", "Err", new { Message = msg });
+                    return RedirectToAction("Err404", "Err", new { Message = msg });
                 }
 
                 return View(user);
@@ -77,6 +77,7 @@ namespace MobileNic.MVC.Controllers
         // POST: /Usuario/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Usuario Usuario)
         {
             try
@@ -124,7 +125,7 @@ namespace MobileNic.MVC.Controllers
                     var msg = "";
 
                     //Not Found - Err 404
-                    RedirectToAction("Err404", "Err", new { Message = msg });
+                    return RedirectToAction("Err404", "Err", new { Message = msg });
                 }
 
                 //Se hace la redirección
@@ -142,6 +143,7 @@ namespace MobileNic.MVC.Controllers
         // POST: /Usuario/Edit/5
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Guid id, FormCollection collection)
         {
             try
@@ -161,7 +163,7 @@ namespace MobileNic.MVC.Controllers
                     var msg = "";
 
                     //Not Found - Err 404
-                    RedirectToAction("Err404", "Err", new { Message = msg });
+                    return RedirectToAction("Err404", "Err", new { Message = msg });
                 }
 
                 //Se guardan los cambios
@@ -189,36 +191,71 @@ namespace MobileNic.MVC.Controllers
                 //Inicializar el objeto db
                 db = new MobileModels();
 
-
                 //Verificar si existe el usuario
                 var user = db.Usuarios.AsParallel().Where(c => c.IdUsuario == id).FirstOrDefault();
 
+                //Se evalua si existe
+                if (user == null)
+                {
+                    //Message
+                    var msg = "";
 
+                    //Not Found - Err 404
+                    return RedirectToAction("Err404", "Err", new { Message = msg });
+                }
+
+                return View(user);
             }
             catch (Exception ex)
             {
                 ViewBag["err"] = ex.Message;
-                return View();
-            }
 
-            return View();
+                return RedirectToAction("", "", null);
+            }
         }
 
         //
         // POST: /Usuario/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Guid id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
 
+                //Inicializar el objeto db
+                db = new MobileModels();
+
+                //Verificar si existe el usuario
+                var user = db.Usuarios.AsParallel().Where(c => c.IdUsuario == id).FirstOrDefault();
+
+                //Se evalua si existe
+                if (user == null)
+                {
+                    //Message
+                    var msg = "";
+
+                    //Not Found - Err 404
+                    return RedirectToAction("Err404", "Err", new { Message = msg });
+                }
+
+                //Desactivar usuario
+                user.ActivoUsuario = false;
+
+                //Se guardan los cambios
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                //redireccionar al index
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
+
+
             }
         }
     }
