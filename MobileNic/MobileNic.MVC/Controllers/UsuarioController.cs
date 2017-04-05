@@ -253,9 +253,9 @@ namespace MobileNic.MVC.Controllers
             }
             catch(Exception ex)
             {
+                ViewBag.Err = ex.Message;
+
                 return View();
-
-
             }
         }
     }
