@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MobileNic.MVC.Models;
+using System.Linq.Expressions;
 
 namespace MobileNic.MVC.Controllers
 {
@@ -258,5 +259,36 @@ namespace MobileNic.MVC.Controllers
                 return View();
             }
         }
+
+        //public Func<int, string, Controller> Metodo(Func<int, int> par)
+        //{
+        //    return null;
+        //}
+
+
+        //public Func<string, string> Metodo2()
+        //{
+            
+        //    ParameterExpression num1 = Expression.Parameter(typeof(int), "num1");
+        //    ParameterExpression num2 = Expression.Parameter(typeof(int), "num2");
+ 
+            
+        //    ParameterExpression[] parameters = new ParameterExpression[] { num1, num2 };
+ 
+            
+        //    BinaryExpression body = Expression.Add(num1, num2);
+ 
+            
+        //    Expression<Func<int, int, int>> expression =
+        //    Expression.Lambda<Func<int, int, int>>(body, parameters);
+ 
+            
+        //    Func<int, int, int> compiledExpression = expression.Compile();
+ 
+            
+        //    int result = compiledExpression(3, 4); //return 7
+
+        //    return result;
+        //}
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Web;
 
@@ -30,5 +31,13 @@ namespace MobileNic.MVC.Models
         }
 
         public virtual ICollection<Municipio> Municipios { get; set; }
+    }
+
+    public class DepartamentoMapping : EntityTypeConfiguration<Departamento>
+    {
+        public DepartamentoMapping()
+        {
+            HasRequired(c => c.Municipios).WithRequiredDependent();
+        }
     }
 }
