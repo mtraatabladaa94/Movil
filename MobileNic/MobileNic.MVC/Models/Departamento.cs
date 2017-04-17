@@ -37,7 +37,7 @@ namespace MobileNic.MVC.Models
     {
         public DepartamentoMapping()
         {
-            HasRequired(c => c.Municipios).WithRequiredDependent();
+            //HasRequired(c => c.Municipios).WithRequiredPrincipal( t=>t.);
         }
     }
 }

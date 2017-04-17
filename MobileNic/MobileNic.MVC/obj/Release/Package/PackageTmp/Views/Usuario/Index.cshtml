@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MobileNic.MVC.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CedulaUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombresUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidosUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContrasenaUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivoUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular1Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular2Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdMunicipio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CedulaUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombresUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidosUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContrasenaUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivoUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Celular1Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Celular2Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdMunicipio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdUsuario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdUsuario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuario })
+        </td>
+    </tr>
+}
+
+</table>
